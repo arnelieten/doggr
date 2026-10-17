@@ -21,14 +21,15 @@
             'hobbies (send hobbies-field get-value)
             'relation (send relation-field get-value)))
 
-    (define (result->text result)
+    (define (submit-result->text submit-result)
       (cond
-        [(eq? result 'saved) "Profile saved"]
-        [(eq? result 'invalid-age) "Age must be a number"]
+        [(eq? submit-result 'saved) "Profile saved"]
+        [(eq? submit-result 'incomplete-profile) "Please fill in all fields"]
+        [(eq? submit-result 'invalid-age) "Age must be a number"]
         [else "Something went wrong"]))
 
     (define (handle-submit-click button event)
-      (send status-message set-label (result->text (on-submit (collect-fields)))))
+      (send status-message set-label (submit-result->text (on-submit (collect-fields)))))
 
     (new button% [parent this] [label "Submit"] [callback handle-submit-click])
 
