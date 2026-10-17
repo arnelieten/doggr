@@ -12,4 +12,7 @@
       (hash-update raw-fields 'age string->number))
 
     (define/public (submit-dog-profile! raw-fields)
-      (send-to-process-orchestrator (raw-fields->profile-fields raw-fields)))))
+      (define profile-fields (raw-fields->profile-fields raw-fields))
+      (if (hash-ref profile-fields 'age)
+          (send-to-process-orchestrator profile-fields)
+          'invalid-age))))
