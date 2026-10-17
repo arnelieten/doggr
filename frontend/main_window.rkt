@@ -6,12 +6,15 @@
 
 (define main-window%
   (class object%
+    (init-field on-profile-submit)
     (super-new)
 
     (define frame (new frame% [label "Doggr"] [width 800] [height 400]))
 
     (define screens
-      (hash 'create-profile (new create-profile-screen% [parent frame])))
+      (hash 'create-profile (new create-profile-screen%
+                                 [parent frame]
+                                 [on-submit on-profile-submit])))
 
     (define/public (show-screen! screen-name)
       (for ([screen (send frame get-children)])
