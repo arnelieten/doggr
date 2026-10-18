@@ -1,6 +1,6 @@
 #lang racket
 
-(require rackunit racket/class "../../backend/process_orchestrator.rkt")
+(require rackunit racket/class "../../backend/process_orchestrator.rkt" "../../common/dog_profile.rkt")
 
 (define mock-database-handler%
   (class object%
@@ -12,5 +12,5 @@
   (define mock-database-handler (new mock-database-handler%))
   (define orchestrator (new process-orchestrator% [database-handler mock-database-handler]))
 
-  (send orchestrator create-dog-profile! (hash 'name "Rex" 'age 7 'hobbies '() 'relation "steady"))
+  (send orchestrator create-dog-profile! (initialize-dog-profile #f "Rex" 7 '() "steady"))
   (check-equal? (get-field last-call mock-database-handler) 'create-profile!))

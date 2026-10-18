@@ -11,8 +11,8 @@
 (define database-handler (new database-handler% [database database]))
 (define process-orchestrator (new process-orchestrator% [database-handler database-handler]))
 
-(define (send-to-process-orchestrator profile-fields)
-  (send process-orchestrator create-dog-profile! profile-fields))
+(define (send-to-process-orchestrator profile)
+  (send process-orchestrator create-dog-profile! profile))
 
 (define (open-client!)
   (define client-orchestrator

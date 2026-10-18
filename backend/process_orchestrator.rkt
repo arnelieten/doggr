@@ -9,11 +9,11 @@
     (init-field database-handler)
     (super-new)
 
-    (define/public (create-dog-profile! profile-fields)
+    (define/public (create-dog-profile! profile)
       (send database-handler create-profile!
             (initialize-dog-profile (uuid-string)
-                                    (hash-ref profile-fields 'name)
-                                    (hash-ref profile-fields 'age)
-                                    (hash-ref profile-fields 'hobbies)
-                                    (hash-ref profile-fields 'relation)))
+                                    (dog-profile-name profile)
+                                    (dog-profile-age profile)
+                                    (dog-profile-hobbies profile)
+                                    (dog-profile-relation profile)))
       'saved)))
