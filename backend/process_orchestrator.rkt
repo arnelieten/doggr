@@ -1,5 +1,7 @@
 #lang racket
 
+;; Main business logic in the server. In phase 1 very light to be extended in phases 2 & 3.
+
 (require racket/class uuid "database_handler.rkt" "../common/dog_profile.rkt")
 
 (provide process-orchestrator%)

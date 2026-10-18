@@ -1,5 +1,8 @@
 #lang racket
 
+;; Orchestrates the different screens, in phase 1 only the profile creation screen.
+;; In later phases will manage the different screns.
+
 (require racket/gui/base "screens.rkt")
 
 (provide main-window%)
@@ -13,8 +16,8 @@
 
     (define screens
       (hash 'create-profile (new create-profile-screen%
-                                 [parent frame]
-                                 [on-submit on-profile-submit])))
+                              [parent frame]
+                              [on-submit on-profile-submit])))
 
     (define/public (show-screen! screen-name)
       (for ([screen (send frame get-children)])

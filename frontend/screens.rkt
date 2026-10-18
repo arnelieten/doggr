@@ -1,5 +1,7 @@
 #lang racket
 
+;; Collection of the different screens, for now only the profile creation screen.
+
 (require racket/gui/base)
 
 (provide create-profile-screen%)

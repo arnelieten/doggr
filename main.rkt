@@ -1,5 +1,7 @@
 #lang racket
 
+;; File that wires all the components together.
+
 (require racket/class
          "backend/in_memory_database.rkt"
          "backend/database_handler.rkt"

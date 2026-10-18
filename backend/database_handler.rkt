@@ -1,5 +1,9 @@
 #lang racket
 
+;; Databasehandler will interact with the databases, in phase 1 in memory database and from
+;; phase 2 onwards the Sqlite database. Databasehandler forms the bridge between the business logic
+;; in the backend and storage of data.
+
 (require racket/class "../common/dog_profile.rkt")
 
 (provide database<%> database-handler%)

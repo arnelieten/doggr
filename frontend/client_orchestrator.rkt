@@ -1,5 +1,7 @@
 #lang racket
 
+;; Main business logic in the client side, currently very light. Will be extended in phases 2 & 3.
+
 (require racket/class "../common/dog_profile.rkt")
 
 (provide client-orchestrator%)
@@ -17,5 +19,5 @@
         [(incomplete? raw-fields) 'incomplete-profile]
         [(not age) 'invalid-age]
         [else (send-to-process-orchestrator
-               (initialize-dog-profile #f (hash-ref raw-fields 'name) age
-                                       (hash-ref raw-fields 'hobbies) (hash-ref raw-fields 'relation)))]))))
+                (initialize-dog-profile #f (hash-ref raw-fields 'name) age
+                                        (hash-ref raw-fields 'hobbies) (hash-ref raw-fields 'relation)))]))))

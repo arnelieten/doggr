@@ -1,5 +1,8 @@
 #lang racket
 
+;; dog profile is the required information for creating a profile on doggr.
+;; Shared between client and server.
+
 (provide initialize-dog-profile
          dog-profile?
          dog-profile-id
