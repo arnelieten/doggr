@@ -22,7 +22,6 @@
     (define/public (create-profile! profile)
       (send database create! (dog-profile-id profile) (profile->hash profile)))
 
-    ; TODO: handle id not existing in database
     (define/public (read-profile id)
       (define fields (send database read id))
       (initialize-dog-profile id

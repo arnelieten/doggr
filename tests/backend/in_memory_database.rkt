@@ -11,4 +11,5 @@
   (send database update! 1 old-rex)
   (check-equal? (send database read 1) old-rex)
   (send database delete! 1)
-  (check-false (send database read 1)))
+  (define (read-deleted-profile) (send database read 1))
+  (check-exn exn:profile-not-found? read-deleted-profile))
