@@ -23,7 +23,10 @@
           (raise (exn:profile-not-found "profile not found" (current-continuation-marks)))))
 
     (define/public (update! id fields)
-      (hash-set! profiles id fields))
+      (if (hash-has-key? profiles id)
+          (hash-set! profiles id fields)
+          (raise (exn:profile-not-found "profile not found" (current-continuation-marks))))
+      )
 
     (define/public (delete! id)
       (hash-remove! profiles id))))
