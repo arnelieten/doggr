@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2120" height="1800" viewBox="0 0 1060 900" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1060" height="900" fill="#ffffff"/>
+
+  <text x="530" y="62" text-anchor="middle" font-size="28" font-weight="700" fill="#2c3e50">Pedigree Dog App</text>
+
+  <!-- Containers -->
+  <rect x="30" y="110" width="470" height="540" rx="14" fill="#f4f7fd" stroke="#c9d6ea" stroke-width="1.5"/>
+  <text x="265" y="142" text-anchor="middle" font-size="15" font-weight="700" fill="#2c3e50" letter-spacing="1">CLIENT</text>
+
+  <rect x="560" y="110" width="470" height="540" rx="14" fill="#fffaf0" stroke="#ecdcae" stroke-width="1.5"/>
+  <text x="795" y="142" text-anchor="middle" font-size="15" font-weight="700" fill="#2c3e50" letter-spacing="1">SERVER</text>
+
+  <rect x="330" y="680" width="400" height="130" rx="14" fill="#f8f6fd" stroke="#d6cdee" stroke-width="1.5"/>
+  <text x="530" y="708" text-anchor="middle" font-size="15" font-weight="700" fill="#2c3e50" letter-spacing="1">COMMON</text>
+
+  <!-- Client nodes -->
+  <rect x="95" y="160" width="340" height="68" rx="8" fill="#e8f0fb" stroke="#5a6b80" stroke-width="1.2"/>
+  <text x="265" y="200" text-anchor="middle" font-size="18" font-weight="700" fill="#2c3e50">ClientOrchestrator</text>
+
+  <rect x="95" y="290" width="340" height="68" rx="8" fill="#e8f0fb" stroke="#5a6b80" stroke-width="1.2"/>
+  <text x="265" y="330" text-anchor="middle" font-size="18" font-weight="700" fill="#2c3e50">MainWindow</text>
+
+  <rect x="95" y="420" width="340" height="68" rx="8" fill="#e8f0fb" stroke="#5a6b80" stroke-width="1.2"/>
+  <text x="265" y="460" text-anchor="middle" font-size="18" font-weight="700" fill="#2c3e50">CreateProfileScreen</text>
+
+  <rect x="95" y="550" width="340" height="68" rx="8" fill="#eeeff1" stroke="#5a6b80" stroke-width="1.2"/>
+  <text x="265" y="580" text-anchor="middle" font-size="18" font-weight="700" fill="#2c3e50">racket/gui/base</text>
+  <text x="265" y="603" text-anchor="middle" font-size="13" fill="#5a6b80">External library | not a project ADT</text>
+
+  <!-- Server nodes -->
+  <rect x="625" y="160" width="340" height="68" rx="8" fill="#fdf0d0" stroke="#5a6b80" stroke-width="1.2"/>
+  <text x="795" y="200" text-anchor="middle" font-size="18" font-weight="700" fill="#2c3e50">ProcessOrchestrator</text>
+
+  <rect x="625" y="290" width="340" height="68" rx="8" fill="#fdf0d0" stroke="#5a6b80" stroke-width="1.2"/>
+  <text x="795" y="330" text-anchor="middle" font-size="18" font-weight="700" fill="#2c3e50">DatabaseHandler</text>
+
+  <rect x="625" y="420" width="340" height="68" rx="8" fill="#fdf0d0" stroke="#5a6b80" stroke-width="1.2"/>
+  <text x="795" y="450" text-anchor="middle" font-size="18" font-weight="700" fill="#2c3e50">InMemoryDatabase</text>
+  <text x="795" y="473" text-anchor="middle" font-size="13" fill="#5a6b80">implements database&lt;%&gt;</text>
+
+  <!-- Common node -->
+  <rect x="360" y="725" width="340" height="68" rx="8" fill="#ece6fa" stroke="#5a6b80" stroke-width="1.2"/>
+  <text x="530" y="765" text-anchor="middle" font-size="18" font-weight="700" fill="#2c3e50">DogProfile</text>
+
+  <!-- Dependencies (solid) -->
+  <g fill="none" stroke="#4a5568" stroke-width="1.6">
+    <path d="M 435 214 L 530 214 L 530 725"/>
+    <path d="M 265 358 L 265 420"/>
+    <path d="M 265 488 L 265 550"/>
+    <path d="M 435 324 L 470 324 L 470 584 L 435 584"/>
+    <path d="M 795 228 L 795 290"/>
+    <path d="M 795 358 L 795 420"/>
+    <path d="M 625 324 L 595 324 L 595 725"/>
+    <path d="M 965 194 L 1005 194 L 1005 759 L 700 759"/>
+  </g>
+
+  <!-- Runtime callback (dashed) -->
+  <path d="M 95 454 L 60 454 L 60 194 L 95 194" fill="none" stroke="#4a5568" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <text x="50" y="324" text-anchor="middle" font-size="13" fill="#5a6b80" transform="rotate(-90 50 324)">submit callback</text>
+  <path d="M 435 194 L 625 194" fill="none" stroke="#4a5568" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <text x="530" y="184" text-anchor="middle" font-size="13" fill="#5a6b80">server callback</text>
+
+  <!-- Legend -->
+  <g font-size="14" fill="#2c3e50">
+    <line x1="30" y1="860" x2="80" y2="860" stroke="#4a5568" stroke-width="1.6"/>
+    <text x="92" y="865">depends on</text>
+    <line x1="230" y1="860" x2="280" y2="860" stroke="#4a5568" stroke-width="1.6" stroke-dasharray="7 5"/>
+    <text x="292" y="865">calls via callback registered in main.rkt (no static dependency)</text>
+  </g>
+  <!-- Arrowheads -->
+  <g fill="#4a5568">
+    <polygon points="625,194 614,188.5 614,199.5"/>
+    <polygon points="530,725 524.5,714 535.5,714"/>
+    <polygon points="265,420 259.5,409 270.5,409"/>
+    <polygon points="265,550 259.5,539 270.5,539"/>
+    <polygon points="435,584 446,578.5 446,589.5"/>
+    <polygon points="795,290 789.5,279 800.5,279"/>
+    <polygon points="795,420 789.5,409 800.5,409"/>
+    <polygon points="595,725 589.5,714 600.5,714"/>
+    <polygon points="700,759 711,753.5 711,764.5"/>
+    <polygon points="95,194 84,188.5 84,199.5"/>
+    <polygon points="80,860 69,854.5 69,865.5"/>
+    <polygon points="280,860 269,854.5 269,865.5"/>
+  </g>
+</svg>
