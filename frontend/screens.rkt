@@ -2,6 +2,9 @@
 
 ;; Collection of the different screens, for now only the profile creation screen.
 
+;; Sources:
+;; - GUI toolkit: https://docs.racket-lang.org/gui/index.html
+
 (require racket/gui/base)
 
 (provide create-profile-screen%)

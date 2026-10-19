@@ -1,5 +1,8 @@
 #lang racket
 
+;; Sources:
+;; - RackUnit: https://docs.racket-lang.org/rackunit/index.html
+
 (require rackunit "../../common/dog_profile.rkt")
 
 (test-case "initialize dog-profile with valid arguments"

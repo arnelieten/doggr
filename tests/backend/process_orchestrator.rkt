@@ -1,5 +1,9 @@
 #lang racket
 
+;; Sources:
+;; - RackUnit: https://docs.racket-lang.org/rackunit/index.html
+;; - mocking: https://martinfowler.com/articles/mocksArentStubs.html
+
 (require rackunit racket/class "../../backend/process_orchestrator.rkt" "../../common/dog_profile.rkt")
 
 (define mock-database-handler%

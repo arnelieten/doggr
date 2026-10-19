@@ -2,6 +2,9 @@
 
 ;; simple hash map based in memory database with crud operations
 
+;; Sources:
+;; - exceptions (reference): https://docs.racket-lang.org/reference/exns.html
+
 (require racket/class "database_handler.rkt")
 
 (provide in-memory-database% (struct-out exn:profile-not-found))

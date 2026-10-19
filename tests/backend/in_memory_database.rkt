@@ -1,5 +1,8 @@
 #lang racket
 
+;; Sources:
+;; - RackUnit: https://docs.racket-lang.org/rackunit/index.html
+
 (require rackunit racket/class "../../backend/in_memory_database.rkt")
 
 (test-case "test crud operations on in memory database"

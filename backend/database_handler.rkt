@@ -4,6 +4,10 @@
 ;; phase 2 onwards the Sqlite database. Databasehandler forms the bridge between the business logic
 ;; in the backend and storage of data.
 
+;; Sources:
+;; - classes: https://docs.racket-lang.org/guide/classes.html
+;; - interfaces: https://docs.racket-lang.org/reference/createinterface.html
+
 (require racket/class "../common/dog_profile.rkt")
 
 (provide database<%> database-handler%)

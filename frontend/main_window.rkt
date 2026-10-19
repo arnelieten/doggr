@@ -3,6 +3,9 @@
 ;; Orchestrates the different screens, in phase 1 only the profile creation screen.
 ;; In later phases will manage the different screns.
 
+;; Sources:
+;; - GUI toolkit: https://docs.racket-lang.org/gui/index.html
+
 (require racket/gui/base "screens.rkt")
 
 (provide main-window%)

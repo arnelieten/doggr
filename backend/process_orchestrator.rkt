@@ -2,6 +2,9 @@
 
 ;; Main business logic in the server. In phase 1 very light to be extended in phases 2 & 3.
 
+;; Sources:
+;; - uuid package: https://docs.racket-lang.org/uuid/index.html
+
 (require racket/class uuid "database_handler.rkt" "../common/dog_profile.rkt")
 
 (provide process-orchestrator%)
